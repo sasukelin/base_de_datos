@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos sobre IA y Depresión</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="d-flex justify-content-between align-items-center p-3 bg-primary text-white">
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsOStuUcjYbEJZDTnVHx3MuoP7QMkbNF5sFg&s"
+                alt="Logo Institucional" class="img-fluid" style="max-width: 80px;">
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link text-white" href="#articulos">Artículos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Artículos -->
+    <main id="articulos" class="container my-5">
+        <h1 class="text-center text-primary mb-4">Artículos Seleccionados</h1>
+
+        <!-- Primer Artículo -->
+        <article class="bg-white p-4 rounded shadow mb-4">
+            <h3 class="text-dark">
+                Identifying major depressive disorder in older adults through naturalistic driving behaviors and machine
+                learning
+            </h3>
+            <p><strong>Autores:</strong> Chen, C., Brown, D. C., Al-Hammadi, N., Bayat, S., Dickerson, A., Vrkljan, B.,
+                Blake, M., Zhu, Y., Trani, J.-F., Lenze, E. J., Carr, D. B., & Babulal, G. M.</p>
+            <p><strong>Año:</strong> 2025</p>
+            <p><strong>Fuente:</strong> <em>NPJ Digital Medicine, 8(102)</em>
+                <a href="https://doi.org/10.1038/s41746-025-01500-w" target="_blank">DOI</a>
+            </p>
+            <p><strong>Resumen:</strong> El estudio analiza datos de conducción naturalista de 157 adultos mayores (81
+                con depresión mayor) utilizando técnicas de machine learning. El mejor modelo alcanzó un AUC de 0.86
+                combinando datos de conducción con uso de medicamentos, mostrando el potencial de este enfoque como
+                biomarcador digital.</p>
+            <p><strong>Palabras clave:</strong> Inteligencia Artificial, Depresión, Adultos mayores, Machine Learning,
+                Conducción.</p>
+            <button class="btn btn-warning mt-2" onclick="toggleResumen(this)">Mostrar/Ocultar Resumen
+                Detallado</button>
+            <div class="resumen mt-3" style="display:none;">
+                <p>
+                    La investigación demuestra el potencial de la conducción naturalista como marcador digital no
+                    invasivo para la detección temprana de depresión en adultos mayores, lo cual podría mejorar el
+                    diagnóstico clínico y la seguridad vial.
+                </p>
+            </div>
+        </article>
+
+        <!-- Aquí puedes añadir más artículos repitiendo el mismo bloque <article> -->
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="contacto" class="bg-primary text-white text-center p-3">
+        <p>Contacta con nosotros: <a href="mailto:info@institucion.edu" class="text-warning">info@institucion.edu</a>
+        </p>
+        <p>Dirección: Calle Ficticia 123, Ciudad</p>
+        <p id="contador" class="text-light"></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Función para mostrar/ocultar resumen
+        function toggleResumen(btn) {
+            let resumen = btn.nextElementSibling;
+            if (resumen.style.display === "none") {
+                resumen.style.display = "block";
+                btn.textContent = "Ocultar Resumen Detallado";
+            } else {
+                resumen.style.display = "none";
+                btn.textContent = "Mostrar/Ocultar Resumen Detallado";
+            }
+        }
+
+        // Función para contar visitas con localStorage
+        function contarVisitas() {
+            let visitas = localStorage.getItem("visitas") || 0;
+            visitas++;
+            localStorage.setItem("visitas", visitas);
+            document.getElementById("contador").textContent = "Visitas a la página: " + visitas;
+        }
+
+        // Ejecutar contador al cargar
+        window.onload = contarVisitas;
+    </script>
+</body>
+
+</html>
